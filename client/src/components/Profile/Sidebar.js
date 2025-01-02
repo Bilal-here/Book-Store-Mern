@@ -53,7 +53,9 @@ function Sidebar({ profile , setDpChange}) {
 
   return !profile ? (
     // Show the loader when the profile prop is null or undefined
-    <LoadingIndicator />
+    <div className="flex justify-center items-center h-[60vh]">
+    <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500"></div>
+  </div>
   ) : (
     <div className="flex flex-col items-center text-center my-6">
       {/* Profile Picture */}
