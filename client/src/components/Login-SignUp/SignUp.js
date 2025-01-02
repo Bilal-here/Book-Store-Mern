@@ -24,7 +24,7 @@ const Signup = () => {
     e.preventDefault();
 
     axios
-      .post("http://192.168.1.203:8080/sign-up", formData)
+      .post("http://localhost:8080/sign-up", formData)
       .then((response) => {
         toast.success("Signup Successful!", {
           autoClose: 1500,

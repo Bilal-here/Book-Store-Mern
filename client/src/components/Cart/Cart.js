@@ -24,7 +24,7 @@ function Cart() {
     const fetchCartItems = async () => {
       try {
         const response = await axios.get(
-          "http://192.168.1.203:8080/cart/get-cart-items",
+          "http://localhost:8080/cart/get-cart-items",
           { headers }
         );
         const items = response?.data?.message || [];
@@ -60,7 +60,7 @@ function Cart() {
 
   const handleRemoveItem = async (id) => {
     try {
-      await axios.delete(`http://192.168.1.203:8080/cart/remove-from-cart/${id}`, {
+      await axios.delete(`http://localhost:8080/cart/remove-from-cart/${id}`, {
         headers,
       });
       const updatedItems = cartItems.filter((item) => item._id !== id);
@@ -94,7 +94,7 @@ function Cart() {
     setLoadingOrder(true);
     try {
       const response = await axios.post(
-        "http://192.168.1.203:8080/order/place-order",
+        "http://localhost:8080/order/place-order",
         { order: cartItems.map((item) => ({ _id: item._id, quantity: item.quantity || 1 })) },
         { headers }
       );
@@ -105,7 +105,7 @@ function Cart() {
         });
 
         for (const item of cartItems) {
-          await axios.delete(`http://192.168.1.203:8080/cart/remove-from-cart/${item._id}`, {
+          await axios.delete(`http://localhost:8080/cart/remove-from-cart/${item._id}`, {
             headers,
           });
         }

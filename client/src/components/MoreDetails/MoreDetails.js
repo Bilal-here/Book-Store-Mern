@@ -11,7 +11,7 @@ const MoreDetails = () => {
   useEffect(() => {
     window.scrollTo(0,0)
     axios
-      .get(`http://192.168.1.203:8080/books/get-recent-books/${id}`)
+      .get(`http://localhost:8080/books/get-recent-books/${id}`)
       .then((response) => {
         setBook(response?.data?.data);
         setLoading(false);
@@ -31,7 +31,7 @@ const MoreDetails = () => {
   const handleCart = async () => {
     try {
       const response = await axios.put(
-        "http://192.168.1.203:8080/cart/add-to-cart",
+        "http://localhost:8080/cart/add-to-cart",
         {},
         { headers }
       );
@@ -57,7 +57,7 @@ const MoreDetails = () => {
   const handleFavourite = async () => {
     try {
       const response = await axios.put(
-        "http://192.168.1.203:8080/add-book-to-fav",
+        "http://localhost:8080/add-book-to-fav",
         {},
         { headers }
       );

@@ -51,7 +51,7 @@ function VerifyOtp() {
     setIsSubmitting(true);
 
     try {
-      const response = await axios.post("http://192.168.1.203:8080/otp/verify-otp", {
+      const response = await axios.post("http://localhost:8080/otp/verify-otp", {
         email,
         otp,
         newPassword,

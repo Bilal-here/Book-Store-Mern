@@ -18,7 +18,7 @@ function AllOrders() {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get("http://192.168.1.203:8080/order/get-all-orders", { headers });
+        const response = await axios.get("http://localhost:8080/order/get-all-orders", { headers });
         setOrders(response?.data?.data || []);
       } catch (error) {
         toast.error("Failed to fetch orders.", { autoClose: 1000 });
@@ -33,7 +33,7 @@ function AllOrders() {
   const handleStatusChange = async (orderId) => {
     try {
       const response = await axios.put(
-        `http://192.168.1.203:8080/order/update-order-status/${orderId}`,
+        `http://localhost:8080/order/update-order-status/${orderId}`,
         { status: newStatus },
         { headers }
       );

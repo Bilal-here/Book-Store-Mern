@@ -36,7 +36,7 @@ function RecentlyAdded() {
   useEffect(() => {
     if (isVisible) {
       axios
-        .get("http://192.168.1.203:8080/books/get-recent-books")
+        .get("http://localhost:8080/books/get-recent-books")
         .then((response) => {
           setRecent(response?.data?.data || []);
         })

@@ -30,7 +30,7 @@ function Sidebar({ profile , setDpChange}) {
       setError(null); // Reset error message
       setDpChange(false)
       const response = await axios.put(
-        "http://192.168.1.203:8080/profile/update-avatar", // Update with your backend URL
+        "http://localhost:8080/profile/update-avatar", // Update with your backend URL
         formData,
         {
           headers: {

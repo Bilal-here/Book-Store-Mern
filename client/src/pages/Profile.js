@@ -17,7 +17,7 @@ function Profile() {
     const fetch = async () => {
       try {
         const response = await axios.get(
-          "http://192.168.1.203:8080/get-user-details",
+          "http://localhost:8080/get-user-details",
           { headers }
         );
         setProfile(response?.data);

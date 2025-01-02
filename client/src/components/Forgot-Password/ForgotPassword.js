@@ -30,7 +30,7 @@ function ForgotPassword() {
 
     try {
       const response = await axios.post(
-        "http://192.168.1.203:8080/otp/request-otp",
+        "http://localhost:8080/otp/request-otp",
         { email }
       );
       Toastify({

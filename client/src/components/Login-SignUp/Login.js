@@ -28,7 +28,7 @@ function Login() {
     e.preventDefault();
     console.log("Form submitted");
     axios
-      .post("http://192.168.1.203:8080/sign-in", formData)
+      .post("http://localhost:8080/sign-in", formData)
       .then((response) => {
         toast.success("Signin Successful!", {  // Success toast
           autoClose: 1500,

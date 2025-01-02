@@ -43,7 +43,7 @@ function Settings() {
 
     // Send PUT request to update password
     axios
-      .put(`http://192.168.1.203:8080/update-password` ,data , {headers})
+      .put(`http://localhost:8080/update-password` ,data , {headers})
       .then((response) => {
         toast.success("Password updated successfully!", {
           autoClose: 1500,

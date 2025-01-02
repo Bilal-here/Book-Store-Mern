@@ -16,7 +16,7 @@ function Favourites() {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await axios.get("http://192.168.1.203:8080/get-fav-books", { headers });
+        const response = await axios.get("http://localhost:8080/get-fav-books", { headers });
         setFav(response?.data?.data || []);
       } catch (err) {
         toast.error("Failed to fetch favourites.", { autoClose: 1000 });
@@ -40,7 +40,7 @@ function Favourites() {
                   ...headers,
                   bookid: bookId,
                 };
-                const response = await axios.delete("http://192.168.1.203:8080/remove-book-from-fav", {
+                const response = await axios.delete("http://localhost:8080/remove-book-from-fav", {
                   headers: newHeaders,
                 });
                 setFav((prevFav) => prevFav.filter((book) => book._id !== bookId));

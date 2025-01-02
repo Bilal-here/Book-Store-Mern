@@ -13,7 +13,7 @@
     useEffect(() => {
       window.scrollTo(0, 0);
       axios
-        .get("http://192.168.1.203:8080/books/get-books")
+        .get("http://localhost:8080/books/get-books")
         .then((response) => {
           setAllBooks(response?.data?.books);
           setFilteredBooks(response?.data?.books); // Initialize filtered books
