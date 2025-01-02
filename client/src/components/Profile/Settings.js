@@ -43,7 +43,7 @@ function Settings() {
 
     // Send PUT request to update password
     axios
-      .put(`http://localhost:8080/update-password` ,data , {headers})
+      .put(`https://book-store-server-pry1.onrender.com/update-password` ,data , {headers})
       .then((response) => {
         toast.success("Password updated successfully!", {
           autoClose: 1500,

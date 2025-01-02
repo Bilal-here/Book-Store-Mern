@@ -13,7 +13,7 @@
     useEffect(() => {
       window.scrollTo(0, 0);
       axios
-        .get("http://localhost:8080/books/get-books")
+        .get("https://book-store-server-pry1.onrender.com/books/get-books")
         .then((response) => {
           setAllBooks(response?.data?.books);
           setFilteredBooks(response?.data?.books); // Initialize filtered books
@@ -83,8 +83,8 @@
               transition={{ duration: 0.5 }}
               className="mt-6 mb-6 grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 xl:gap-x-8"
             >
-              {filteredBooks.length > 0 ? (
-                filteredBooks.map((item, i) => (
+              {filteredBooks?.length > 0 ? (
+                filteredBooks?.map((item, i) => (
                   <Link to={`/more-details/${item._id}`} key={item.id}>
                     <motion.div
                       className="group relative p-3 h-96 hover:bg-zinc-50 hover:shadow-md hover:scale-105 transition-transform duration-150 ease-in-out border-2 rounded-lg border-solid border-gray-100 flex justify-center flex-col"

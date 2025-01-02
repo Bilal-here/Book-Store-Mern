@@ -16,7 +16,7 @@ function OrderHistory() {
     const fetchOrders = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8080/order/get-order-history",
+          "https://book-store-server-pry1.onrender.com/order/get-order-history",
           { headers }
         );
         setOrders(response?.data?.data || []);

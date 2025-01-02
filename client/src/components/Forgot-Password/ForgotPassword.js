@@ -30,7 +30,7 @@ function ForgotPassword() {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/otp/request-otp",
+        "https://book-store-server-pry1.onrender.com/otp/request-otp",
         { email }
       );
       Toastify({

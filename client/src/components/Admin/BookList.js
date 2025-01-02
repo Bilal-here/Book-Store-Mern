@@ -9,7 +9,7 @@ function BookList() {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/books/get-books');
+        const response = await axios.get('https://book-store-server-pry1.onrender.com/books/get-books');
         setBooks(response.data.books);
       } catch (error) {
         console.error('Error fetching books:', error);
@@ -24,7 +24,7 @@ function BookList() {
       authorization: `Bearer ${localStorage.getItem("token")}`,
     };
     try {
-      await axios.delete(`http://localhost:8080/books/delete-books/${id}`, { headers });
+      await axios.delete(`https://book-store-server-pry1.onrender.com/books/delete-books/${id}`, { headers });
       setBooks(books.filter((book) => book._id !== id));
       alert('Book deleted successfully');
     } catch (error) {

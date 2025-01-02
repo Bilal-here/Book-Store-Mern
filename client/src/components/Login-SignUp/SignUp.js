@@ -24,7 +24,7 @@ const Signup = () => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:8080/sign-up", formData)
+      .post("https://book-store-server-pry1.onrender.com/sign-up", formData)
       .then((response) => {
         toast.success("Signup Successful!", {
           autoClose: 1500,

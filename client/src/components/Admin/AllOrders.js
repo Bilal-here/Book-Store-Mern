@@ -18,7 +18,7 @@ function AllOrders() {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/order/get-all-orders", { headers });
+        const response = await axios.get("https://book-store-server-pry1.onrender.com/order/get-all-orders", { headers });
         setOrders(response?.data?.data || []);
       } catch (error) {
         toast.error("Failed to fetch orders.", { autoClose: 1000 });
@@ -33,7 +33,7 @@ function AllOrders() {
   const handleStatusChange = async (orderId) => {
     try {
       const response = await axios.put(
-        `http://localhost:8080/order/update-order-status/${orderId}`,
+        `https://book-store-server-pry1.onrender.com/order/update-order-status/${orderId}`,
         { status: newStatus },
         { headers }
       );

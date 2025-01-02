@@ -17,7 +17,7 @@ function EditBook() {
   useEffect(() => {
     const fetchBook = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/books/get-book/${id}`);
+        const response = await axios.get(`https://book-store-server-pry1.onrender.com/books/get-book/${id}`);
         const bookData = response.data.book;
         setBook(bookData);
         setTitle(bookData.title);
@@ -51,7 +51,7 @@ function EditBook() {
     }
 
     try {
-      await axios.put(`http://localhost:8080/books/update-books/${id}`, formData, {
+      await axios.put(`https://book-store-server-pry1.onrender.com/books/update-books/${id}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           id: localStorage.getItem("id"),

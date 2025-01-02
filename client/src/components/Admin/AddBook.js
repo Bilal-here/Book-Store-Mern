@@ -39,7 +39,7 @@ function AddBook() {
     data.append('file', formData.file);
 
     try {
-      const response = await axios.post('http://localhost:8080/books/add-books', data, {
+      const response = await axios.post('https://book-store-server-pry1.onrender.com/books/add-books', data, {
         headers: {
           'Content-Type': 'multipart/form-data',
           id: localStorage.getItem("id"),

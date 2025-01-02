@@ -30,7 +30,7 @@ function Sidebar({ profile , setDpChange}) {
       setError(null); // Reset error message
       setDpChange(false)
       const response = await axios.put(
-        "http://localhost:8080/profile/update-avatar", // Update with your backend URL
+        "https://book-store-server-pry1.onrender.com/profile/update-avatar", // Update with your backend URL
         formData,
         {
           headers: {
