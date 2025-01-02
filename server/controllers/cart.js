@@ -1,8 +1,9 @@
-const { user } = require('../models/user');
+const user = require('../models/user');
 
 // Add to Cart
 async function addToCart(req, res) {
     try {
+        
         const { bookid, id } = req.headers;
         const userData = await user.findById(id);
         const isBookAdded = userData.cart.includes(bookid);
