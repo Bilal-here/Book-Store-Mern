@@ -87,10 +87,12 @@ const signUp = async (req, res) => {
     const signIn = async(req,res)=>{
        try{ 
         
-        const password = req.body
+        const {password} = req.body
         const email = req.body.email.toLowerCase()
+        
 
         const verifyUser = await User.findOne({email:email})
+        console.log(verifyUser)
         if(!verifyUser){
             res
             .status(400)
@@ -98,11 +100,14 @@ const signUp = async (req, res) => {
         }   
        
         bcrypt.compare(password , verifyUser.password ,(err,data)=>{
+          console.log("Hello")
             if(data){
+              console.log('Hello 2')
                 const authClaims =[
                     {email : verifyUser.email},
                     {role : verifyUser.role}
                 ]
+                console.log(authClaims)
                 const token = jwt.sign({authClaims} ,process.env.SECRECT_KEY,{
                     expiresIn : '1d'
                 } )
