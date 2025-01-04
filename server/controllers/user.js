@@ -8,7 +8,8 @@ require('dotenv').config()
 //Sign-Up handle
 const signUp = async (req, res) => {
     try {
-      const { username, email, password, address, role } = req.body;
+      const { username, password, address, role } = req.body;
+      const email = req.body.email.toLowerCase()
      
   
       // Check if email is provided
@@ -86,7 +87,8 @@ const signUp = async (req, res) => {
     const signIn = async(req,res)=>{
        try{ 
         
-        const {email , password} = req.body
+        const password = req.body
+        const email = req.body.email.toLowerCase()
 
         const verifyUser = await User.findOne({email:email})
         if(!verifyUser){
