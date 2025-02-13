@@ -48,7 +48,7 @@ const MoreDetails = () => {
         }
       );
     } catch (error) {
-      toast.error("Failed to add book to cart. Please try again.", {
+      toast.error("Please Login before adding to cart, then please try again.", {
         autoClose: 1000,
       });
     }
@@ -74,7 +74,7 @@ const MoreDetails = () => {
         }
       );
     } catch (error) {
-      toast.error("Failed to add book to favourites. Please try again.", {
+      toast.error("Please Login before adding to Favourites, then please try again.", {
         autoClose: 3000,
       });
     }
